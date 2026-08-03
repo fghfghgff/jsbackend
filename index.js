@@ -1,10 +1,4 @@
-// Conceito visual de Requisição e Resposta no Back-End:
-// Cliente faz:  GET /produtos
-// Servidor faz: Processa no banco de dados e retorna JSON
-const respostaServidor = {
-  status: 200,
-  mensagem: "Pedido recebido na cozinha do servidor!",
-  dados: ["Prato 1", "Prato 2"]
-};
+const moduloMatematica = require('./calculadora');
 
-console.log(respostaServidor);
+console.log("Resultado da soma via Módulo:", moduloMatematica.somar(10, 25));
+console.log("Resultado da multiplicação:", moduloMatematica.multiplicar(4, 5));
