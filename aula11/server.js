@@ -1,4 +1,3 @@
-// server.js - Servidor Express Completo (Programação Back-End I - Aula 11)
 require('dotenv').config();
 const express = require('express');
 const supabase = require('./config/supabaseClient');
@@ -8,7 +7,6 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3030;
 
-// 1. Rota GET Global: Listar todos os itens_papelaria
 app.get('/papelaria', async (req, res) => {
   try {
     const { data, error } = await supabase
@@ -25,7 +23,6 @@ app.get('/papelaria', async (req, res) => {
   }
 });
 
-// 2. Rota GET por ID com tratamento 404
 app.get('/papelaria/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -46,7 +43,6 @@ app.get('/papelaria/:id', async (req, res) => {
   }
 });
 
-// 3. Rota GET com Ordenação Decrescente por npmço
 app.get('/papelaria-ordenado', async (req, res) => {
   try {
     const { data, error } = await supabase
@@ -62,7 +58,6 @@ app.get('/papelaria-ordenado', async (req, res) => {
   }
 });
 
-// Inicialização da escuta do servidor HTTP
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando com sucesso na porta ${PORT}`);
   console.log(`📡 Endpoints disponíveis: http://localhost:${PORT}/papelaria`);
